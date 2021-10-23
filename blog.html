@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./blogstyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function showBlog(){
+            document.getElementById('popupContact').style.display = "block"
+        }
+        function closeBlog(){
+            document.getElementById('popupContact').style.display = "none"
+        }
+    </script>
+    <script>
+        function showBlog(){
+            document.getElementById('popupContact').style.display = "block";
+        }
+        function closeBlog(){
+            document.getElementById('popupContact').style.display = "none";
+        }
+    </script>
+    <nav>
+        <img src="./assets/logo.svg" alt="logo" />
+        <ul>
+            <li> <a href="./blog.html">My Blogs</a></li>
+            <li> <a href="./signin.html">Login</a></li>
+            <li> <a href="./signup.html">Sign Up</a></li> 
+        </ul>
+    </nav>
+    <div class="body-div1">
+        <div>Your Blog Posts</div>
+        <button class="button" id="addBlog" onclick="showBlog">Add New Post</button>
+        <form action="./php/viewblog.php">
+            <button class="button" id="viewBlog" type="submit"><i class="fas fa-plus-circle"></i>View Blog</button>
+        </form>
+    </div>
+    <div class="body-div2">
+        <div class="article-card" id="flashcard">
+                <div class="card-text" id="card-text"></div>
+        </div>
+    </div>
+    <div id="popupContact">
+        <button id="close" onclick="closeBlog"> <img id="close" src="./assets/close-button.svg"></button>
+        <img id="rect" src=./assets/rect.svg>
+        <h2>Your Post</h2>
+        <form action="./php/addblog.php" method="POST">
+            <div id="card" >
+                <input id="title" name="title" value="" placeholder="Title" type="text"/>
+                <textarea id="detail" name="description" placeholder="Description" value=""></textarea>
+                <button id="post" type="submit" >POST</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
